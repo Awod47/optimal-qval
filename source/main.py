@@ -8,6 +8,7 @@ from statistics import mean
 
 from inputs import portfolio_input, num_stocks_input
 from yfinance_data import base_dataframe
+from excel_writer import write_to_excel
 
 base_dir = os.path.dirname(__file__) 
 
@@ -66,7 +67,7 @@ def main():
 
     rv_final_portfolio.loc[:, 'Number of Shares to Buy'] = (position_size / rv_final_portfolio['Price']).apply(math.floor)
 
-
+    write_to_excel(rv_final_portfolio)
 
 if __name__ == '__main__':
     main()
