@@ -4,7 +4,7 @@ import os
 base_dir = os.path.dirname(__file__) 
 
 def write_to_excel(df):
-    print('finishing up..')
+    print('saving file and finishing up..')
     save_file_path = os.path.join(base_dir, '..', 'results', 'quant_value_stocks.xlsx')
     writer = pd.ExcelWriter(save_file_path, engine = 'xlsxwriter')
     df.to_excel(writer, sheet_name = 'Value Strategy', index = False)
